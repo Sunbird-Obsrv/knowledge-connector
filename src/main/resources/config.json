@@ -1,0 +1,24 @@
+{
+  "type": "connector",
+  "metadata": {
+    "id": "sb-knowlg-connector",
+    "name": "Sunbird Knowlg Connector",
+    "type": "source",
+    "category": "Stream",
+    "description": "Pull data from a kafka source",
+    "technology": "scala",
+    "licence": "MIT",
+    "owner": "Sunbird",
+    "icon": "",
+    "mainClass": "org.sunbird.obsrv.connector.SBKnowlgConnector"
+  },
+  "source": {
+    "kafka": {
+      "broker-servers": "",
+      "topic": "",
+      "auto-offset-reset": "",
+      "consumer-id": ""
+    },
+    "data-format": "json"
+  }
+}
