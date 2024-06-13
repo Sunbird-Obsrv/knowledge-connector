@@ -11,14 +11,5 @@
     "owner": "Sunbird",
     "icon": "",
     "mainClass": "org.sunbird.obsrv.connector.SBKnowlgConnector"
-  },
-  "source": {
-    "kafka": {
-      "broker-servers": "",
-      "topic": "",
-      "auto-offset-reset": "",
-      "consumer-id": ""
-    },
-    "data-format": "json"
   }
 }
