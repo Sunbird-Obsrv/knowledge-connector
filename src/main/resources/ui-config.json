@@ -1,0 +1,65 @@
+{
+  "knowlg-connector": {
+    "schema": {
+      "title": "Connector Config",
+      "type": "object",
+      "properties": {
+        "source": {
+          "title": "Storage Source",
+          "type": "object",
+          "properties": {
+            "kafka-broker-servers": {
+              "title": "Kafka Broker Server",
+              "type": "string",
+              "fieldDescription": [{
+                "type": "string",
+                "description": "Select polling interval"
+              }]
+            },
+            "kafka-topic": {
+              "title": "Kafka Topic",
+              "type": "string",
+              "fieldDescription": [{
+                "type": "string",
+                "description": "Enter a valid kafka topic."
+              }]
+            },
+            "kafka-auto-offset-reset": {
+              "title": "Kafka Auto Offset Reset",
+              "type": "string",
+              "fieldDescription": [{
+                "type": "string",
+                "description": "Select suitable offset."
+              }],
+              "enum": ["EARLIEST", "LATEST", "NONE"]
+            },
+            "kafka-consumer-id": {
+              "title": "Kafka Consumer Id",
+              "type": "string",
+              "fieldDescription": [{
+                "type": "string",
+                "description": "Select suitable offset."
+              }]
+            },
+            "data-format": {
+              "title": "Data Format",
+              "type": "string",
+              "fieldDescription": [{
+                "type": "string",
+                "description": "Select suitable data format."
+              }],
+              "enum": [
+                "jsonl",
+                "csv",
+                "parquet",
+                "avro"
+              ]
+            }
+          }
+        }
+      },
+      "required": ["source"]
+    },
+    "properties": {}
+  }
+}
