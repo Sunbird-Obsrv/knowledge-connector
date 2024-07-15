@@ -9,16 +9,27 @@
           "type": "object",
           "properties": {
             "kafka-broker-servers": {
-              "title": "Kafka Broker Server",
-              "type": "string",
-              "fieldDescription": [{
+              "title": "Kafka Brokers",
+              "type": "array",
+              "items": {
                 "type": "string",
-                "description": "Select polling interval"
-              }]
+                "pattern": "^(?:[0-9]{1,3}(?:\\.[0-9]{1,3}){3}|[a-zA-Z0-9\\-\\.]+)(?::[0-9]{1,5})?$",
+                "description": "Enter Kafka broker address in the format: host[:port]"
+              },
+              "minItems": 1,
+              "uniqueItems": true,
+              "fieldDescription": [
+                {
+                  "type": "string",
+                  "description": "List of Kafka broker addresses."
+                }
+              ]
             },
             "kafka-topic": {
               "title": "Kafka Topic",
               "type": "string",
+              "pattern": "^[a-zA-Z0-9\\._\\-]+$",
+              "description": "Enter Kafka topic name. Only alphanumeric characters, dots, dashes, and underscores are allowed.",
               "fieldDescription": [{
                 "type": "string",
                 "description": "Enter a valid kafka topic."
@@ -27,15 +38,18 @@
             "kafka-auto-offset-reset": {
               "title": "Kafka Auto Offset Reset",
               "type": "string",
+              "description": "Select the suitable offset reset strategy.",
               "fieldDescription": [{
                 "type": "string",
-                "description": "Select suitable offset."
+                "description": "The auto.offset.reset setting in Kafka determines what happens when there is no initial offset or if the current offset does not exist any longer on the server.\n EARLIEST: Start consumption from the earliest available message in the topic.\n LATEST: Start consumption from the latest message available in the topic.\n NONE: Throw an error if no offset is found for the consumer group, requiring explicit offset assignment."
               }],
               "enum": ["EARLIEST", "LATEST", "NONE"]
             },
             "kafka-consumer-id": {
               "title": "Kafka Consumer Id",
               "type": "string",
+              "pattern": "^[a-zA-Z0-9\\._\\-]+$",
+              "description": "Enter Kafka consumer group ID.",
               "fieldDescription": [{
                 "type": "string",
                 "description": "Select suitable offset."
@@ -49,11 +63,9 @@
                 "description": "Select suitable data format."
               }],
               "enum": [
-                "jsonl",
-                "csv",
-                "parquet",
-                "avro"
-              ]
+                "jsonl"
+              ],
+              "default": "jsonl"
             }
           }
         }
