@@ -54,18 +54,6 @@
                 "type": "string",
                 "description": "Select suitable offset."
               }]
-            },
-            "data-format": {
-              "title": "Data Format",
-              "type": "string",
-              "fieldDescription": [{
-                "type": "string",
-                "description": "Select suitable data format."
-              }],
-              "enum": [
-                "jsonl"
-              ],
-              "default": "jsonl"
             }
           }
         }
