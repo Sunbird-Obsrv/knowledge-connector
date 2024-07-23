@@ -22,6 +22,7 @@
             <outputDirectory>/</outputDirectory>
             <includes>
                 <include>metadata.json</include>
+                <include>ui-config.json</include>
             </includes>
         </fileSet>
         <fileSet>
